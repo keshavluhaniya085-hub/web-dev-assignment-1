@@ -1,5 +1,5 @@
 const isEven = (a) => {
-  const parsedA = parseInt(a, 10);
+  const parsedA = Number(a);
   return Number.isInteger(parsedA) && parsedA % 2 == 0;
 };
 

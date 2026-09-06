@@ -1,5 +1,6 @@
 const fs = require("fs/promises");
 const path = require("path");
+const { colorLog } = require("./modules/logger");
 
 const filePath = path.join(__dirname, "test.txt");
 
@@ -27,7 +28,7 @@ async function runFileManager() {
     await fs.unlink(filePath);
     console.log("File Deleted");
   } catch (err) {
-    console.error("File Operation Error:", err.message);
+    console.error(colorLog("red", `File Operation Error: ${err.message}`));
   }
 }
 
